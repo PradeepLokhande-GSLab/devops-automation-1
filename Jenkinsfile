@@ -16,10 +16,10 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'pass', variable: 'docker-pass')]) {
-                   sh 'docker login -u pradeeplokhande -p ${docker-pass}'
-}
-                   sh 'docker push cicd-pipeline/pradeep'
+                   withCredentials([string(credentialsId: 'test-pass', variable: 'test-pass')]) {
+                   sh 'docker login -u pradeeplokhande -p ${test-pass}'
+                }
+                
                 }
             }
         }
