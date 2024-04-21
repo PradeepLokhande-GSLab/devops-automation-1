@@ -16,9 +16,9 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'docker-pass', variable: 'docker-pass')]) {
-                   sh 'docker login -u pradeeplokhande -p ${docker-pass}'
-                    }
+                   withCredentials([string(credentialsId: 'pass', variable: 'docker-pass')]) {
+                   sh 'docker login -u javatechie -p ${docker-pass}'
+}
                    sh 'docker push pradeeplokhande/pradeep'
                 }
             }
