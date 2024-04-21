@@ -13,5 +13,16 @@ pipeline {
                 }
             }
         }
+        stage('Push image to Hub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u pradeeplokhande -p Pr@dip#123'
+
+                    }
+                   sh 'docker push pradeep'
+                }
+            }
+        }
     }
 }
