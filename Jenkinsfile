@@ -9,7 +9,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t pradeep .'
+                    sh 'docker build -t pradeeplokhande/cicd-pipeline .'
                 }
             }
         }
@@ -18,8 +18,8 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'test-pass', variable: 'test-pass')]) {
                    sh 'docker login -u pradeeplokhande -p ${test-pass}'
-                }
-                
+}
+                   sh 'docker push pradeeplokhande/cicd-pipeline'               
                 }
             }
         }
