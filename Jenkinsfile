@@ -19,7 +19,7 @@ pipeline {
                    withCredentials([string(credentialsId: 'pass', variable: 'docker-pass')]) {
                    sh 'docker login -u pradeeplokhande -p ${docker-pass}'
 }
-                   sh 'docker push pradeeplokhande/pradeep'
+                   sh 'docker push cicd-pipeline/pradeep'
                 }
             }
         }
