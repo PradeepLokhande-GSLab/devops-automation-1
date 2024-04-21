@@ -1,4 +1,11 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java","-jar","/devops-integration.jar"]
+FROM python:3.8-alpine
+
+RUN mkdir /app
+
+ADD app.py /app
+ADD requirements.txt /app
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
