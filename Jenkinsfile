@@ -17,7 +17,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'pass', variable: 'docker-pass')]) {
-                   sh 'docker login -u javatechie -p ${docker-pass}'
+                   sh 'docker login -u pradeeplokhande -p ${docker-pass}'
 }
                    sh 'docker push pradeeplokhande/pradeep'
                 }
