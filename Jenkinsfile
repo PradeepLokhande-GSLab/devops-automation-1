@@ -18,7 +18,7 @@ pipeline {
                 script{
                    sh 'docker login -u pradeeplokhande -p Pr@dip#123'
                    sh 'docker push pradeeplokhande/cicd-pipeline'
-                   sh 'docker run -it -d pradeeplokhande/cicd-pipeline'
+                   sh 'docker run -it -d -p 80:80 pradeeplokhande/cicd-pipeline'
                 }
             }
         }
